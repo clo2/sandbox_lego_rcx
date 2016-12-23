@@ -1,0 +1,11 @@
+/*  軸が1回転する度にピッという音を鳴らすプログラム例です。  */
+task main ()
+{
+    SetSensor(SENSOR_1,SENSOR_ROTATION);  //  SENSOR_1 は回転センサ
+
+    while (true){
+        ClearSensor(SENSOR_1);  // 回転センサをリセット
+        until (SENSOR_1 > 16);  // 回転センサの値が16になるまで待つ
+        PlaySound(0);           // ピッという音を鳴らす
+    }
+}
